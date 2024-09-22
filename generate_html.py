@@ -23,6 +23,10 @@ for filename in os.listdir(folder_path):
             sanitized_filename = sanitize_filename(meet_name)  # Use sanitized filename
             meet_links.append((meet_name, sanitized_filename))  # Store meet name and link
 
+            #gets date 
+            date = data[1][0]
+            
+
             # Start building the individual meet HTML structure
             html_content = f'''<!DOCTYPE html>
             <html lang="en">
@@ -37,6 +41,7 @@ for filename in os.listdir(folder_path):
                 <header>
                     <h1>Welcome to Athlete Website!</h1>
                     <h2>{meet_name}</h2>
+                    <h3>{date}</h3>
                 </header>
                 <section id="meet-results">
                     <h2>Meet Results</h2>
@@ -56,7 +61,9 @@ for filename in os.listdir(folder_path):
 
             # Start reading from the 7th row (index 6)
             first_row = True
+        
             for row in data[6:]:
+
                 if len(row) >= 7:
                     if first_row:
                         first_row = False
