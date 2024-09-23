@@ -38,6 +38,7 @@ for filename in os.listdir(folder_path):
                 <title>{meet_name} Country Meet</title>
             </head>
             <body>
+            <main>
                 <header>
                     <h1>Welcome to Athlete Website!</h1>
                     <h2>{meet_name}</h2>
@@ -98,6 +99,7 @@ for filename in os.listdir(folder_path):
                         </tbody>
                     </table>
                 </section>
+                </main>
             </body>
             </html>
             '''
